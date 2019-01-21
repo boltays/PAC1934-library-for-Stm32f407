@@ -55,9 +55,9 @@ uint8_t PID					= 0XFD;
 uint8_t MID					= 0XFE;
 uint8_t REV					= 0XFF;
 
-uint8_t  pac_ctrl[1] 				= {0x00};   // Assigned the contents of registers.
+uint8_t  pac_ctrl[1] 				= {0x00};  	// Assigned the contents of registers.
 uint8_t  channel[1]				= {0x00};   
-uint8_t  neg[1]     				= {0xFF};   //Vsense and Vbus are determined as bidirectional measurements.
+uint8_t  neg[1]     				= {0xFF};   	//Vsense and Vbus are determined as bidirectional measurements.
 uint8_t  neg_r[1] 				= {0x00};		
 uint8_t  slow[1] 				= {0x00};
    
@@ -86,7 +86,7 @@ uint16_t	data_bus;					//Temporary variable used for voltage calculation
 uint16_t 	data_current;					//Temporary variable used for current calculation
 uint32_t 	data_power;					//Temporary variable used for power calculation
 uint64_t 	data_energy;					//Temporary variable used for energy calculation
-uint32_t i;
+uint32_t	i;
 
 
 
@@ -131,12 +131,12 @@ void PAC1934_init(void){
 void sendComment(void){
 
 
-	HAL_I2C_Master_Transmit(&hi2c1, DEV_ADDR_W1, &REFRESH , 1, 500);  
+		HAL_I2C_Master_Transmit(&hi2c1, DEV_ADDR_W1, &REFRESH , 1, 500);  
 	
 	
 	
-	HAL_I2C_Master_Transmit(&hi2c1, DEV_ADDR_W2, &REFRESH , 1, 500);  
-	HAL_Delay(200);
+		HAL_I2C_Master_Transmit(&hi2c1, DEV_ADDR_W2, &REFRESH , 1, 500);  
+		HAL_Delay(200);
 	
 	
 	
